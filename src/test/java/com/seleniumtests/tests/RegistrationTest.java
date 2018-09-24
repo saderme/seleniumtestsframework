@@ -39,22 +39,16 @@ import java.util.LinkedHashMap;
 
 public class RegistrationTest extends SeleniumTestPlan {
 
-    @DataProvider(
-        name = "loginData",
-        parallel = true
-    )
-    public static Iterator<Object[]> getUserInfo(final Method m)
-        throws Exception {
-        Filter filter = Filter.equalsIgnoreCase(TestEntity.TEST_METHOD,
-                m.getName());
+    @DataProvider(name = "loginData",parallel = true)
+    public static Iterator<Object[]> getUserInfo(final Method m) throws Exception {
+    	
+        Filter filter = Filter.equalsIgnoreCase(TestEntity.TEST_METHOD, m.getName());
 
-        LinkedHashMap<String, Class<?>> classMap =
-            new LinkedHashMap<String, Class<?>>();
+        LinkedHashMap<String, Class<?>> classMap = new LinkedHashMap<String, Class<?>>();
         classMap.put("TestEntity", TestEntity.class);
         classMap.put("User", User.class);
 
-        return SpreadSheetHelper.getEntitiesFromSpreadsheet(
-                RegistrationTest.class, classMap, "loginuser.csv", filter);
+        return SpreadSheetHelper.getEntitiesFromSpreadsheet(RegistrationTest.class, classMap, "loginuser.csv", filter);
     }
 
     @Test(
@@ -91,8 +85,7 @@ public class RegistrationTest extends SeleniumTestPlan {
     @Test(
         groups = { "loginTest" },
         dataProvider = "loginData",
-        description =
-            "Login test to verify that google home page can be reached"
+        description = "Login test to verify that google home page can be reached"
     )
     public void loginTest(final TestEntity testEntity, final User user)
         throws Exception {

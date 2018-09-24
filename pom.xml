@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -8,30 +9,33 @@
 	<packaging>jar</packaging>
 
 	<name>selenium tests framework</name>
-    <description>Step by step test reporting framework based on webdriver and testng</description>
+	<description>Step by step test reporting framework based on webdriver and testng</description>
 	<url>http://www.seleniumtests.com</url>
+	<properties>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+	</properties>
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
 
-    <licenses>
-        <license>
-            <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-    </licenses>
+	<developers>
+		<developer>
+			<name>Tarun Kumar</name>
+			<email>tkumarb@gmail.com</email>
+			<organization>seleniumtests</organization>
+			<organizationUrl>http://www.seleniumtests.com</organizationUrl>
+		</developer>
+	</developers>
 
-    <developers>
-        <developer>
-            <name>Tarun Kumar</name>
-            <email>tkumarb@gmail.com</email>
-            <organization>seleniumtests</organization>
-            <organizationUrl>http://www.seleniumtests.com</organizationUrl>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:git@github.com:TestingForum/seleniumtestsframework.git</connection>
-        <developerConnection>scm:git:git@github.com:TestingForum/seleniumtestsframework.git</developerConnection>
-        <url>git@github.com:TestingForum/seleniumtestsframework.git</url>
-    </scm>
+	<scm>
+		<connection>scm:git:git@github.com:TestingForum/seleniumtestsframework.git</connection>
+		<developerConnection>scm:git:git@github.com:TestingForum/seleniumtestsframework.git</developerConnection>
+		<url>git@github.com:TestingForum/seleniumtestsframework.git</url>
+	</scm>
 
 	<distributionManagement>
 		<snapshotRepository>
@@ -44,17 +48,17 @@
 		</repository>
 	</distributionManagement>
 
-    <repositories>
-        <repository>
-            <id>central</id>
-            <name>Maven Repository Switchboard</name>
-            <layout>default</layout>
-            <url>http://repo1.maven.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled> 
-            </snapshots>
-        </repository>
-    </repositories>
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://repo1.maven.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -65,23 +69,23 @@
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
-			<version>4.0</version> 
+			<version>4.0</version>
 		</dependency>
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>2.1.0</version>
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>2.1.0</version>
 			<exclusions>
 				<exclusion>
-						<groupId>org.seleniumhq.selenium</groupId>
-						<artifactId>selenium-java</artifactId>
+					<groupId>org.seleniumhq.selenium</groupId>
+					<artifactId>selenium-java</artifactId>
 				</exclusion>
-                <exclusion>
-                    <groupId>com.google.code.gson</groupId>
-                    <artifactId>gson</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+				<exclusion>
+					<groupId>com.google.code.gson</groupId>
+					<artifactId>gson</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -95,7 +99,7 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20070829</version> 
+			<version>20070829</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -147,28 +151,28 @@
 			<artifactId>jxl</artifactId>
 			<version>2.6.12</version>
 		</dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>1.3</version>
-        </dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>1.3</version>
+		</dependency>
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 			<version>1.9</version>
 		</dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>23.0</version>
-        </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>23.0</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -208,20 +212,20 @@
 					</properties>
 				</configuration>
 			</plugin>
-            <plugin> 
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions> 
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -245,7 +249,7 @@
 						<goals>
 							<goal>jar</goal>
 						</goals>
-						<configuration> <!-- disable checking for java 8-->
+						<configuration> <!-- disable checking for java 8 -->
 							<additionalparam>-Xdoclint:none</additionalparam>
 						</configuration>
 					</execution>
@@ -265,7 +269,7 @@
 					</execution>
 				</executions>
 			</plugin>
-        </plugins>
+		</plugins>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
